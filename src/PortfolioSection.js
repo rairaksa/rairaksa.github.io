@@ -1,4 +1,7 @@
 import Portfolio from './Portfolio';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import 'swiper/swiper-bundle.min.css';
 
 function PortfolioSection() {
     const data = [
@@ -106,10 +109,21 @@ function PortfolioSection() {
     ]
 
     return (
-        data.map((value) => (
-            <Portfolio name={ value.name } year={ value.year } thumbnail={ value.thumbnail } description={ value.description } technologies={ value.technologies }/>
-        ))
-    )
+        <Swiper
+            spaceBetween={50}
+            slidesPerView={1}
+            onSlideChange={() => console.log('slide change')}
+            onSwiper={(swiper) => console.log(swiper)}
+        >
+            {
+                data.map((value) => (
+                    <SwiperSlide>
+                        <Portfolio name={ value.name } year={ value.year } thumbnail={ value.thumbnail } description={ value.description } technologies={ value.technologies }/>
+                    </SwiperSlide>
+                    ))
+            }
+        </Swiper>
+      );
 }
 
 export default PortfolioSection;
