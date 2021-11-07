@@ -3,23 +3,17 @@ import Instagram from './icons/Instagram';
 
 function ContactSection() {
     return (
-        <div className="w-full h-auto flex flex-col gap-2">
-            <button className="px-2 py-2 w-full rounded-lg mx-auto border border-oceanic font-normal bg-dark-80 text-oceanic hover:bg-oceanic hover:text-silk">
-                <a href="mailto:rairaksa7@gmail.com" className="flex gap-2">
-                    <div className="w-5 h-5">
-                        <Email /> 
-                    </div>
-                    <span className="text-left font-normal">rairaksa7@gmail.com</span>
+        <div className="w-full h-auto flex flex-row justify-center gap-2 mt-4">
+            <span className="w-8 h-8 w-8 h-8 hover:text-oceanic transition-all ease-in-out">
+                <a href="mailto:rairaksa7@gmail.com" target="_blank"> 
+                    <Email />
                 </a>
-            </button>
-            <button className="px-2 py-2 w-full rounded-lg mx-auto border border-oceanic font-normal bg-dark-80 text-oceanic hover:bg-oceanic">
-                <a href="https://instagram.com/raydeon" className="flex gap-2">
-                    <div className="w-5 h-5">
-                        <Instagram /> 
-                    </div>
-                    <span className="text-left font-normal">@raydeon</span>
+            </span>
+            <span className="w-8 h-8 w-8 h-8 hover:text-oceanic transition-all ease-in-out">
+                <a href="https://instagram.com/raydeon" target="_blank"> 
+                    <Instagram />
                 </a>
-            </button>
+            </span>
         </div>
     )
 }
