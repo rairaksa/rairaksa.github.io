@@ -12,13 +12,13 @@ function ProfileSection() {
             <p className="text-2xl lg:text-3xl font-bold">I'm <span class="text-oceanic">Rai Raksa M</span></p>
             <p className="font-light text-xl">Fullstack Web Developer</p>
             </div>
-            <div className="flex gap-2 text-silk -mt-4">
-                <span className="w-10 h-10 w-8 h-8 hover:text-oceanic transition-all ease-in-out">
+            <div className="flex gap-2 text-silk -mt-2 lg:-mt-4">
+                <span className="w-8 h-8 lg:w-10 lg:h-10 hover:text-oceanic transition-all ease-in-out">
                     <a href="https://linkedin.com/rairaksa" target="_blank"> 
                         <LinkedIn />
                     </a>
                 </span>
-                <span className="w-10 h-10 w-8 h-8 hover:text-oceanic transition-all ease-in-out">
+                <span className="w-8 h-8 lg:w-10 lg:h-10 hover:text-oceanic transition-all ease-in-out">
                     <a href="https://github.com/rairaksa" target="_blank"> 
                         <Github />
                     </a>
