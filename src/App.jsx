@@ -1,48 +1,58 @@
 import './App.css';
-import ProfileSection from './ProfileSection';
-import SectionTitle from './SectionTitle';
-import AboutSection from './AboutSection';
-import SkillSection from './SkillSection';
-import ExperienceSection from './ExperienceSection';
-import EducationSection from './EducationSection';
-import PortfolioSection from './PortfolioSection';
-import ContactSection from './ContactSection';
+import SectionTitle from './components/ui/SectionTitle';
+import {
+  ProfileSection,
+  AboutSection,
+  SkillSection,
+  ExperienceSection,
+  EducationSection,
+  PortfolioSection,
+  ContactSection,
+} from './components/sections';
+import { profileData } from './data/profileData';
 
 function App() {
   return (
-    <div className="App relative bg-dark-60 font-josefin text-silk px-2 lg:px-0 py-2 lg:py-8">
-      <div className="card w-full md:w-1/3 h-auto mx-auto bg-dark-80 pt-24 pb-8 px-4 lg:px-8">
+    <div className="App min-h-screen bg-dark-60 font-josefin text-silk px-3 sm:px-6 py-4 sm:py-10">
+      <main className="card w-full max-w-xl mx-auto bg-dark-80 rounded-2xl shadow-2xl border border-silk/5 pt-12 pb-10 px-5 sm:px-8">
         <section className="profile">
           <ProfileSection />
         </section>
-        <section className="about mt-8">
+
+        <section className="about mt-10">
           <SectionTitle title="About" />
           <AboutSection />
         </section>
-        <section className="skills mt-8">
+
+        <section className="skills mt-10">
           <SectionTitle title="Skills" />
           <SkillSection />
         </section>
-        <section className="experience mt-8">
+
+        <section className="experience mt-10">
           <SectionTitle title="Experiences" />
           <ExperienceSection />
         </section>
-        <section className="education mt-8">
+
+        <section className="education mt-10">
           <SectionTitle title="Education" />
           <EducationSection />
         </section>
-        <section className="portfolio mt-8">
+
+        <section className="portfolio mt-10">
           <SectionTitle title="Portfolio" />
           <PortfolioSection />
         </section>
-        <section className="contact mt-8">
+
+        <section className="contact mt-10">
           <SectionTitle title="Get in touch!" />
           <ContactSection />
         </section>
-        <section className="flex justify-center mt-8">
-          <span className="font-light">© Rai Raksa Muhamad</span>
-        </section>
-      </div>
+
+        <footer className="flex justify-center mt-10 pt-6 border-t border-silk/10">
+          <span className="font-light text-sm text-silk/60">© {profileData.name}</span>
+        </footer>
+      </main>
     </div>
   );
 }
