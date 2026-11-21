@@ -1,5 +1,7 @@
+import { useEffect, useState } from 'react';
 import './App.css';
 import SectionTitle from './components/ui/SectionTitle';
+import ThemeToggle from './components/ui/ThemeToggle';
 import {
   ProfileSection,
   AboutSection,
@@ -11,10 +13,41 @@ import {
 } from './components/sections';
 import { profileData } from './data/profileData';
 
+function getInitialTheme() {
+  if (typeof window !== 'undefined' && window.localStorage) {
+    const saved = window.localStorage.getItem('theme');
+    if (saved === 'light' || saved === 'dark') {
+      return saved;
+    }
+  }
+  return 'dark';
+}
+
 function App() {
+  const [theme, setTheme] = useState(getInitialTheme);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    root.classList.remove('light', 'dark');
+    root.classList.add(theme);
+    if (typeof window !== 'undefined' && window.localStorage) {
+      window.localStorage.setItem('theme', theme);
+    }
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
+  };
+
   return (
-    <div className="App min-h-screen bg-dark-60 font-josefin text-silk px-3 sm:px-6 py-4 sm:py-10">
-      <main className="card w-full max-w-xl mx-auto bg-dark-80 rounded-2xl shadow-2xl border border-silk/5 pt-12 pb-10 px-5 sm:px-8">
+    <div
+      className={`App min-h-screen bg-dark-60 font-josefin text-silk px-3 sm:px-6 py-4 sm:py-10 transition-colors duration-300 ${theme}`}
+    >
+      <main className="card relative w-full max-w-xl mx-auto bg-dark-80 rounded-2xl shadow-2xl border border-silk/10 pt-12 pb-10 px-5 sm:px-8 transition-colors duration-300">
+        <div className="absolute top-4 right-4 sm:top-5 sm:right-6">
+          <ThemeToggle theme={theme} onToggle={toggleTheme} />
+        </div>
+
         <section className="profile">
           <ProfileSection />
         </section>

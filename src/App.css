@@ -3,11 +3,11 @@
 }
 
 .swiper-pagination-bullet {
-  background: #f1f1f1 !important;
-  opacity: 0.35 !important;
+  background: rgb(var(--color-silk)) !important;
+  opacity: 0.3 !important;
 }
 
 .swiper-pagination-bullet-active {
-  background: #0095b7 !important;
+  background: rgb(var(--color-oceanic)) !important;
   opacity: 1 !important;
 }
