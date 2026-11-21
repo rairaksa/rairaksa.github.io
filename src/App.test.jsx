@@ -40,4 +40,22 @@ describe('App', () => {
     expect(document.documentElement.classList.contains('light')).toBe(true);
     expect(screen.getByRole('button', { name: /Switch to dark mode/i })).toBeInTheDocument();
   });
+
+  it('renders Download CV and Contact Me CTA buttons and toggles Portfolio List view', () => {
+    render(<App />);
+    expect(screen.getByRole('link', { name: /Download CV/i })).toHaveAttribute(
+      'href',
+      './file/cv.pdf'
+    );
+    expect(screen.getByRole('link', { name: /Contact Me/i })).toHaveAttribute(
+      'href',
+      'mailto:rairaksa7@gmail.com'
+    );
+
+    const listViewBtn = screen.getByRole('button', { name: /List view/i });
+    fireEvent.click(listViewBtn);
+    expect(listViewBtn).toHaveAttribute('aria-pressed', 'true');
+    expect(screen.getByText(/Maintenance Management System \(MMS\)/i)).toBeInTheDocument();
+    expect(screen.getByText(/Educational Quality Assurance/i)).toBeInTheDocument();
+  });
 });

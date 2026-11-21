@@ -14,6 +14,7 @@ import 'swiper/css/navigation';
 
 function PortfolioSection() {
   const [activeCategory, setActiveCategory] = useState('all');
+  const [viewMode, setViewMode] = useState('carousel');
 
   const filteredHighlights = portfolioHighlightsData.filter(
     (item) => activeCategory === 'all' || item.type === activeCategory
@@ -107,7 +108,7 @@ function PortfolioSection() {
 
       {filteredProjects.length > 0 && (
         <div className="flex flex-col gap-2.5">
-          <div className="flex justify-between items-center">
+          <div className="flex flex-wrap justify-between items-center gap-2">
             <h3 className="text-xs uppercase tracking-wider text-oceanic text-left font-medium">
               {activeCategory === 'independent'
                 ? 'Freelance & Independent Projects (2020 - 2026)'
@@ -115,19 +116,73 @@ function PortfolioSection() {
                   ? 'Company & Enterprise Web Applications (2016 - 2021)'
                   : 'Web Applications Portfolio (2016 - 2026)'}
             </h3>
-            <span className="text-xs font-light text-silk/60">Swipe ↔</span>
+            <div className="flex items-center gap-1.5">
+              {viewMode === 'carousel' && (
+                <span className="text-xs font-light text-silk/60 mr-1">Swipe ↔</span>
+              )}
+              <div
+                className="inline-flex rounded-lg bg-dark-60/70 p-0.5 border border-silk/15"
+                role="group"
+                aria-label="Portfolio view mode"
+              >
+                <button
+                  type="button"
+                  onClick={() => setViewMode('carousel')}
+                  aria-label="Slide view"
+                  aria-pressed={viewMode === 'carousel'}
+                  className={`px-2 py-0.5 rounded-md text-[11px] transition-colors ${
+                    viewMode === 'carousel'
+                      ? 'bg-oceanic text-white'
+                      : 'text-silk/70 hover:text-oceanic'
+                  }`}
+                >
+                  Slide
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setViewMode('list')}
+                  aria-label="List view"
+                  aria-pressed={viewMode === 'list'}
+                  className={`px-2 py-0.5 rounded-md text-[11px] transition-colors ${
+                    viewMode === 'list'
+                      ? 'bg-oceanic text-white'
+                      : 'text-silk/70 hover:text-oceanic'
+                  }`}
+                >
+                  List All
+                </button>
+              </div>
+            </div>
           </div>
-          <Swiper
-            key={activeCategory}
-            modules={[Pagination, Navigation]}
-            spaceBetween={24}
-            slidesPerView={1}
-            pagination={{ clickable: true }}
-            className="w-full pb-9"
-          >
-            {filteredProjects.map((project) => (
-              <SwiperSlide key={project.name}>
+
+          {viewMode === 'carousel' ? (
+            <Swiper
+              key={activeCategory}
+              modules={[Pagination, Navigation]}
+              spaceBetween={24}
+              slidesPerView={1}
+              pagination={{ clickable: true }}
+              className="w-full pb-9"
+            >
+              {filteredProjects.map((project) => (
+                <SwiperSlide key={project.name}>
+                  <PortfolioCard
+                    name={project.name}
+                    year={project.year}
+                    context={project.context}
+                    type={project.type}
+                    thumbnail={project.thumbnail}
+                    description={project.description}
+                    technologies={project.technologies}
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          ) : (
+            <div className="flex flex-col gap-3">
+              {filteredProjects.map((project) => (
                 <PortfolioCard
+                  key={project.name}
                   name={project.name}
                   year={project.year}
                   context={project.context}
@@ -136,9 +191,9 @@ function PortfolioSection() {
                   description={project.description}
                   technologies={project.technologies}
                 />
-              </SwiperSlide>
-            ))}
-          </Swiper>
+              ))}
+            </div>
+          )}
         </div>
       )}
     </div>
