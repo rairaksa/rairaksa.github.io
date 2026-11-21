@@ -10,7 +10,8 @@ export const profileData = {
     'Over the years, I evolved from delivering mission-critical aviation and enterprise platforms into architecting high-throughput backend microservices in Go (Golang) with PostgreSQL, MySQL, Redis, and AWS (SNS, SQS, S3). Today, I combine resilient event-driven architecture with Grafana observability, n8n automation, and AI-assisted engineering workflows to ship fast, dependable software.',
   ],
   stats: [
-    { value: '11+', description: 'Years experience' },
+    { value: '11+', description: 'Years total experience' },
+    { value: '9+', description: 'Years in software' },
     { value: '15+', description: 'Projects completed' },
     { value: '5', description: 'Companies worked' },
   ],
@@ -150,8 +151,8 @@ export const educationData = [
     name: 'Widyatama University — Bandung',
     data: [
       {
-        year: 'Bachelor of Informatics Engineering (S.T.)',
-        position: 'Informatics Engineering',
+        year: '2013 - 2017',
+        position: 'Bachelor of Informatics Engineering (S.T.)',
         description:
           'Focused on software engineering, algorithms, relational database design, and distributed systems architecture.',
       },
@@ -163,6 +164,8 @@ export const portfolioHighlightsData = [
   {
     name: 'Evermos Backend & Event-Driven Services',
     year: '2022 - Present',
+    type: 'company',
+    context: 'Evermos',
     description:
       'High-concurrency Go microservices powering social commerce transactions, asynchronous pub/sub workflows via AWS SNS & SQS, low-latency Redis caching, S3 media pipelines, and real-time Grafana observability.',
     technologies: [
@@ -179,10 +182,36 @@ export const portfolioHighlightsData = [
   },
 ];
 
+export const portfolioCategories = [
+  { id: 'all', label: 'All Projects' },
+  { id: 'company', label: 'Company / Enterprise' },
+  { id: 'independent', label: 'Freelance & Independent' },
+];
+
 export const portfolioProjectsData = [
+  {
+    name: 'Maintenance Management System (MMS)',
+    year: '2026',
+    type: 'independent',
+    context: 'Freelance • PT Peroksida Indonesia Pratama',
+    description:
+      'Industrial maintenance management platform covering preventive & corrective work orders, equipment BOM & runtime tracking, multi-step approval workflows, purchase requisitions, SLA analytics, and role-based access control.',
+    technologies: ['Laravel', 'ReactJS', 'TypeScript', 'TailwindCSS', 'MySQL'],
+  },
+  {
+    name: 'Joinan Securities Crowdfunding',
+    year: '2022 - 2023',
+    type: 'independent',
+    context: 'Freelance • Joinan',
+    description:
+      'Modular backend API and back-office microservices for a securities crowdfunding investment platform, handling investor onboarding, KYC verification, issuer campaign management, transaction processing, and automated reporting.',
+    technologies: ['Laravel', 'MySQL', 'Redis', 'AWS S3', 'REST API'],
+  },
   {
     name: 'Snapinn Property Agent',
     year: '2021',
+    type: 'independent',
+    context: 'Freelance Project',
     thumbnail: 'assets/portfolio/2021-snapinn.jpg',
     description:
       'A modern property listing platform connecting real estate agents with prospective buyers.',
@@ -191,6 +220,8 @@ export const portfolioProjectsData = [
   {
     name: 'Halo Retail',
     year: '2021',
+    type: 'company',
+    context: 'Halosis',
     thumbnail: 'assets/portfolio/2021-retail.jpg',
     description:
       'Back-office content and inventory management platform for online retail storefronts.',
@@ -199,6 +230,8 @@ export const portfolioProjectsData = [
   {
     name: 'Halosis Central',
     year: '2021',
+    type: 'company',
+    context: 'Halosis',
     thumbnail: 'assets/portfolio/2021-central.jpg',
     description:
       'Multi-tenant e-commerce builder featuring customizable storefront templates and custom domains.',
@@ -207,6 +240,8 @@ export const portfolioProjectsData = [
   {
     name: 'Akansah Wedding Invitation',
     year: '2020',
+    type: 'independent',
+    context: 'Freelance Project',
     thumbnail: 'assets/portfolio/2020-akansah.jpg',
     description:
       'Interactive digital wedding invitation and RSVP management platform.',
@@ -215,6 +250,8 @@ export const portfolioProjectsData = [
   {
     name: 'Airport Operational Dashboard',
     year: '2020',
+    type: 'company',
+    context: 'PT BIJB (Kertajati Airport)',
     thumbnail: 'assets/portfolio/2020-aod.jpg',
     description:
       'Executive real-time dashboard monitoring flight operations and daily metrics at Kertajati International Airport.',
@@ -223,6 +260,8 @@ export const portfolioProjectsData = [
   {
     name: 'BIJB E-Procurement',
     year: '2019',
+    type: 'company',
+    context: 'PT BIJB (Kertajati Airport)',
     thumbnail: 'assets/portfolio/2019-eproc.jpg',
     description:
       'End-to-end digital procurement portal for vendor registration, tendering, and contract workflows.',
@@ -231,6 +270,8 @@ export const portfolioProjectsData = [
   {
     name: 'Access Control System',
     year: '2018',
+    type: 'company',
+    context: 'PT BIJB (Kertajati Airport)',
     thumbnail: 'assets/portfolio/2018-acs.jpg',
     description:
       'Security clearance and airport pass issuance platform for restricted operational zones.',
@@ -239,6 +280,8 @@ export const portfolioProjectsData = [
   {
     name: 'BIJB Information System',
     year: '2017',
+    type: 'company',
+    context: 'PT BIJB (Kertajati Airport)',
     thumbnail: 'assets/portfolio/2017-bis.jpg',
     description:
       'Integrated enterprise resource system streamlining internal corporate workflows and approvals.',
@@ -247,6 +290,8 @@ export const portfolioProjectsData = [
   {
     name: 'Educational Quality Assurance',
     year: '2016',
+    type: 'company',
+    context: 'Pusat Teknologi Instrumentasi & Otomasi ITB',
     thumbnail: 'assets/portfolio/2016-eqa.jpg',
     description:
       'Academic accreditation tracking and continuous quality assurance monitoring platform.',

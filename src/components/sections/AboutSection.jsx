@@ -4,12 +4,12 @@ import { profileData } from '../../data/profileData';
 function AboutSection() {
   return (
     <div className="flex flex-col gap-5">
-      <div className="flex flex-col gap-3 font-light text-sm lg:text-base text-silk/90 leading-relaxed text-left">
+      <div className="flex flex-col gap-3 font-light text-sm lg:text-base text-silk/90 leading-relaxed text-justify">
         {profileData.bio.map((paragraph, idx) => (
           <p key={idx}>{paragraph}</p>
         ))}
       </div>
-      <div className="grid grid-cols-3 gap-2.5">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
         {profileData.stats.map((stat) => (
           <Statistic key={stat.description} value={stat.value} description={stat.description} />
         ))}
