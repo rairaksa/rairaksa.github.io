@@ -3,3 +3,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root,
+  .dark {
+    --color-dark-80: 20 25 28;
+    --color-dark-60: 31 37 40;
+    --color-oceanic: 0 149 183;
+    --color-flare: 255 127 0;
+    --color-silk: 241 241 241;
+  }
+
+  .light {
+    --color-dark-80: 255 255 255;
+    --color-dark-60: 241 245 249;
+    --color-oceanic: 2 132 168;
+    --color-flare: 234 88 12;
+    --color-silk: 15 23 42;
+  }
+}

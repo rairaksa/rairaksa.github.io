@@ -3,7 +3,7 @@ function Label({ name, isSmall = false }) {
 
   return (
     <span
-      className={`inline-flex items-center rounded-md border border-oceanic/70 bg-oceanic/5 font-normal text-oceanic hover:bg-oceanic hover:text-silk transition-colors duration-200 select-none ${sizeClasses}`}
+      className={`inline-flex items-center rounded-md border border-oceanic/70 bg-oceanic/5 font-normal text-oceanic hover:bg-oceanic hover:text-white transition-colors duration-200 select-none ${sizeClasses}`}
     >
       {name}
     </span>

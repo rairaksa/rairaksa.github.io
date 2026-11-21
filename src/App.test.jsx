@@ -30,4 +30,14 @@ describe('App', () => {
     expect(screen.getByText(/Evermos Backend & Event-Driven Services/i)).toBeInTheDocument();
     expect(screen.queryByText(/Maintenance Management System \(MMS\)/i)).not.toBeInTheDocument();
   });
+
+  it('toggles between dark mode and light mode', () => {
+    render(<App />);
+    const toggleBtn = screen.getByRole('button', { name: /Switch to light mode/i });
+    expect(document.documentElement.classList.contains('dark')).toBe(true);
+
+    fireEvent.click(toggleBtn);
+    expect(document.documentElement.classList.contains('light')).toBe(true);
+    expect(screen.getByRole('button', { name: /Switch to dark mode/i })).toBeInTheDocument();
+  });
 });

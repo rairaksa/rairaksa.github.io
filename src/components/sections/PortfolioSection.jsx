@@ -52,14 +52,14 @@ function PortfolioSection() {
               onClick={() => setActiveCategory(cat.id)}
               className={`px-3 py-1.5 rounded-lg text-xs sm:text-sm font-normal border transition-all duration-200 flex items-center gap-1.5 ${
                 isActive
-                  ? 'bg-oceanic text-silk border-oceanic shadow-sm'
+                  ? 'bg-oceanic text-white border-oceanic shadow-sm'
                   : 'bg-dark-60/70 text-silk/80 border-silk/15 hover:border-oceanic/60 hover:text-oceanic'
               }`}
             >
               <span>{cat.label}</span>
               <span
                 className={`text-[11px] px-1.5 py-0.2 rounded-full ${
-                  isActive ? 'bg-dark-80/40 text-silk' : 'bg-dark-80 text-silk/70'
+                  isActive ? 'bg-white/20 text-white' : 'bg-dark-80 text-silk/70'
                 }`}
               >
                 {count}
