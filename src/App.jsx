@@ -15,19 +15,19 @@ function App() {
           <ProfileSection />
         </section>
         <section className="about mt-8">
-          <SectionTitle title='About' />
+          <SectionTitle title="About" />
           <AboutSection />
         </section>
         <section className="skills mt-8">
-          <SectionTitle title="Skills"></SectionTitle>
+          <SectionTitle title="Skills" />
           <SkillSection />
         </section>
         <section className="experience mt-8">
-          <SectionTitle title="Experiences"></SectionTitle>
+          <SectionTitle title="Experiences" />
           <ExperienceSection />
         </section>
         <section className="portfolio mt-8">
-          <SectionTitle title="Portfolio"></SectionTitle>
+          <SectionTitle title="Portfolio" />
           <PortfolioSection />
         </section>
         <section className="contact mt-8">
