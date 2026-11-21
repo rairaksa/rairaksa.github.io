@@ -2,6 +2,16 @@
   text-align: center;
 }
 
+.swiper-pagination-bullet {
+  background: #f1f1f1 !important;
+  opacity: 0.35 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #0095b7 !important;
+  opacity: 1 !important;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

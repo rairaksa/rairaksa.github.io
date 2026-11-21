@@ -12,11 +12,11 @@ function ProfileSection() {
         <p className="text-2xl lg:text-3xl font-bold">
           I'm <span className="text-oceanic">Rai Raksa M</span>
         </p>
-        <p className="font-light text-xl">Fullstack Web Developer</p>
+        <p className="font-light text-xl">Backend Engineer</p>
       </div>
       <div className="flex gap-2 text-silk -mt-2 lg:-mt-4">
         <span className="w-8 h-8 lg:w-10 lg:h-10 hover:text-oceanic transition-all ease-in-out">
-          <a href="https://linkedin.com/rairaksa" target="_blank" rel="noreferrer">
+          <a href="https://linkedin.com/in/rairaksa" target="_blank" rel="noreferrer">
             <LinkedIn />
           </a>
         </span>

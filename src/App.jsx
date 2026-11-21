@@ -4,6 +4,7 @@ import SectionTitle from './SectionTitle';
 import AboutSection from './AboutSection';
 import SkillSection from './SkillSection';
 import ExperienceSection from './ExperienceSection';
+import EducationSection from './EducationSection';
 import PortfolioSection from './PortfolioSection';
 import ContactSection from './ContactSection';
 
@@ -25,6 +26,10 @@ function App() {
         <section className="experience mt-8">
           <SectionTitle title="Experiences" />
           <ExperienceSection />
+        </section>
+        <section className="education mt-8">
+          <SectionTitle title="Education" />
+          <EducationSection />
         </section>
         <section className="portfolio mt-8">
           <SectionTitle title="Portfolio" />

@@ -3,16 +3,41 @@ import Skill from './Skill';
 function SkillSection() {
   const data = [
     {
-      category: 'Backend Development',
-      data: [{ name: 'Laravel' }, { name: 'CodeIgniter' }, { name: 'MySQL' }],
+      category: 'Languages & Frameworks',
+      data: [
+        { name: 'Golang' },
+        { name: 'PHP / Laravel' },
+        { name: 'CodeIgniter' },
+        { name: 'ReactJS' },
+        { name: 'TailwindCSS' },
+      ],
     },
     {
-      category: 'Frontend Development',
-      data: [{ name: 'HTML' }, { name: 'CSS' }, { name: 'TailwindCSS' }, { name: 'ReactJS' }],
+      category: 'Databases & Messaging',
+      data: [
+        { name: 'PostgreSQL' },
+        { name: 'MySQL' },
+        { name: 'Redis' },
+        { name: 'AWS SNS' },
+        { name: 'AWS SQS' },
+      ],
     },
     {
-      category: 'Others',
-      data: [{ name: 'Git' }, { name: 'AWS' }, { name: 'Linux CLI' }, { name: 'Networking' }],
+      category: 'Cloud & Observability',
+      data: [
+        { name: 'AWS S3' },
+        { name: 'Grafana' },
+        { name: 'Git' },
+        { name: 'Linux CLI' },
+        { name: 'Networking' },
+      ],
+    },
+    {
+      category: 'AI & Automation',
+      data: [
+        { name: 'AI-Assisted Workflow' },
+        { name: 'n8n' },
+      ],
     },
   ];
 

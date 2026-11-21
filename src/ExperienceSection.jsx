@@ -3,12 +3,24 @@ import Experience from './Experience';
 function ExperienceSection() {
   const data = [
     {
-      name: 'PT Hasil Sukses Indonesia',
+      name: 'PT Setiap Hari Dipakai (Evermos)',
       data: [
         {
-          year: '2020 - now',
+          year: '2022 - Present',
+          position: 'Backend Engineer',
+          description:
+            'Design and scale high-throughput Go microservices and event-driven architectures using AWS SNS/SQS, PostgreSQL, MySQL, Redis, and S3—backed by Grafana observability, n8n workflow automation, and AI-assisted engineering.',
+        },
+      ],
+    },
+    {
+      name: 'PT Hasil Sukses Indonesia (Halosis)',
+      data: [
+        {
+          year: '2020 - 2022',
           position: 'Fullstack PHP Developer',
-          description: '',
+          description:
+            'Engineered multi-tenant social commerce platforms and retail management web applications using Laravel, Yii, TailwindCSS, and MySQL.',
         },
       ],
     },
@@ -18,12 +30,14 @@ function ExperienceSection() {
         {
           year: '2020',
           position: 'Manager of ICT Area Management',
-          description: '',
+          description:
+            'Spearheaded airport ICT operations, mission-critical system reliability, and cross-functional infrastructure governance at Kertajati International Airport.',
         },
         {
           year: '2017 - 2020',
           position: 'System Development',
-          description: '',
+          description:
+            'Architected and delivered core airport enterprise platforms—including the Operational Dashboard, E-Procurement, and Security Access Control systems.',
         },
       ],
     },
@@ -33,7 +47,8 @@ function ExperienceSection() {
         {
           year: '2014 - 2016',
           position: 'IT Staff',
-          description: '',
+          description:
+            'Administered research center IT infrastructure and developed web platforms for academic quality assurance and institutional accreditation.',
         },
       ],
     },
@@ -43,7 +58,8 @@ function ExperienceSection() {
         {
           year: '2012 - 2013',
           position: 'Wireless Engineer',
-          description: '',
+          description:
+            'Deployed, optimized, and maintained enterprise wireless networks and high-availability connectivity infrastructure.',
         },
       ],
     },
