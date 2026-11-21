@@ -3,16 +3,16 @@ import Statistic from './Statistic';
 function AboutSection() {
   return (
     <div className="about">
-      <p className="font-light mt-4">
-        Informatics Engineer alumnus at Widyatama University. Full-Stack Web Developer from Bandung, Indonesia 🇮🇩
+      <p className="font-light mt-4 leading-relaxed">
+        Backend Engineer based in Bandung, Indonesia 🇮🇩. My journey in technology started with a Bachelor's degree in Informatics Engineering (S.Kom.) from Widyatama University and an early foundation in wireless networking and campus IT infrastructure—giving me a deep, ground-up understanding of how distributed systems communicate and scale.
         <br />
         <br />
-        Currently working some Laravel project and learning ReactJS, ExpressJS and TailwindCSS. I'm also interested to UI Design and looking to collaborate on Open Source and/or Web Apps project.
+        Over the past decade, I evolved from building enterprise and aviation systems into architecting high-throughput backend microservices in Go (Golang) with PostgreSQL, MySQL, Redis, and AWS (SNS, SQS, S3). Today, I combine resilient system architecture with Grafana observability, n8n automation, and AI-assisted engineering workflows to turn complex product challenges into fast, dependable software.
       </p>
       <div className="grid grid-cols-3 gap-2 mt-4">
-        <Statistic value="7+" description="Years experience" />
-        <Statistic value="10+" description="Projects completed" />
-        <Statistic value="4" description="Companies worked" />
+        <Statistic value="11+" description="Years experience" />
+        <Statistic value="15+" description="Projects completed" />
+        <Statistic value="5" description="Companies worked" />
       </div>
       <div className="mt-4">
         <a href="./file/cv.pdf" target="_blank" rel="noreferrer">
