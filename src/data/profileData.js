@@ -6,7 +6,7 @@ export const profileData = {
   avatar: './assets/img/rai.jpg',
   resumeUrl: './file/cv.pdf',
   bio: [
-    "Backend Engineer based in Bandung, Indonesia 🇮🇩. My journey in technology started with a Bachelor's degree in Informatics Engineering (S.Kom.) from Widyatama University and an early foundation in wireless networking and campus IT infrastructure—giving me a deep, ground-up understanding of how distributed systems communicate and scale.",
+    "Backend Engineer based in Bandung, Indonesia 🇮🇩. My journey in technology started with a Bachelor's degree in Informatics Engineering (S.T.) from Widyatama University and an early foundation in wireless networking and campus IT infrastructure—giving me a deep, ground-up understanding of how distributed systems communicate and scale.",
     'Over the past decade, I evolved from building enterprise and aviation systems into architecting high-throughput backend microservices in Go (Golang) with PostgreSQL, MySQL, Redis, and AWS (SNS, SQS, S3). Today, I combine resilient system architecture with Grafana observability, n8n automation, and AI-assisted engineering workflows to turn complex product challenges into fast, dependable software.',
   ],
   stats: [
@@ -151,7 +151,7 @@ export const educationData = [
     name: 'Widyatama University — Bandung',
     data: [
       {
-        year: 'Bachelor of Informatics Engineering (S.Kom.)',
+        year: 'Bachelor of Informatics Engineering (S.T.)',
         position: 'Informatics Engineering',
         description:
           'Built a strong academic foundation in software engineering, algorithms, relational databases, and computer networks while actively working in campus IT and systems development.',
