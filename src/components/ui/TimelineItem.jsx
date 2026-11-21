@@ -14,7 +14,7 @@ function TimelineItem({ name, data }) {
               <span className="font-light text-xs lg:text-sm text-silk/70 shrink-0">{item.year}</span>
             </div>
             {item.description && (
-              <p className="font-light text-sm text-silk/85 mt-1.5 leading-relaxed">
+              <p className="font-light text-sm text-silk/85 mt-1.5 leading-relaxed text-justify">
                 {item.description}
               </p>
             )}

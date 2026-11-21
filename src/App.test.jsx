@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
 import App from './App';
 
@@ -13,5 +13,21 @@ describe('App', () => {
     expect(screen.getByText(/Cloud & Observability/i)).toBeInTheDocument();
     expect(screen.getByText(/AI & Automation/i)).toBeInTheDocument();
     expect(screen.getByText(/Evermos Backend & Event-Driven Services/i)).toBeInTheDocument();
+  });
+
+  it('filters portfolio between Company / Enterprise and Freelance & Independent tabs', () => {
+    render(<App />);
+    const freelanceTab = screen.getByRole('tab', { name: /Freelance & Independent/i });
+    fireEvent.click(freelanceTab);
+    expect(screen.getByText(/Maintenance Management System \(MMS\)/i)).toBeInTheDocument();
+    expect(screen.getByText(/PT Peroksida Indonesia Pratama/i)).toBeInTheDocument();
+    expect(screen.getByText(/Joinan Securities Crowdfunding/i)).toBeInTheDocument();
+    expect(screen.getByText(/Snapinn Property Agent/i)).toBeInTheDocument();
+    expect(screen.queryByText(/Evermos Backend & Event-Driven Services/i)).not.toBeInTheDocument();
+
+    const companyTab = screen.getByRole('tab', { name: /Company \/ Enterprise/i });
+    fireEvent.click(companyTab);
+    expect(screen.getByText(/Evermos Backend & Event-Driven Services/i)).toBeInTheDocument();
+    expect(screen.queryByText(/Maintenance Management System \(MMS\)/i)).not.toBeInTheDocument();
   });
 });
