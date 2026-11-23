@@ -1,13 +1,13 @@
 export const profileData = {
   name: 'Rai Raksa Muhamad',
   shortName: 'Rai Raksa M',
-  role: 'Backend Engineer',
+  role: 'Backend Engineer • Open to Full-Stack Roles',
   location: 'Bandung, Indonesia 🇮🇩',
   avatar: './assets/img/rai.jpg',
   resumeUrl: './file/cv.pdf',
   bio: [
     "Backend Engineer based in Bandung, Indonesia 🇮🇩, with a Bachelor's degree in Informatics Engineering (S.T.) from Widyatama University and nearly a decade of software engineering experience turning complex business problems into reliable systems.",
-    'Over the years, I moved from delivering airport and enterprise platforms to building Go (Golang) backend services at Evermos, covering product discovery, payments, and settlement reconciliation. I work with PostgreSQL, MySQL, Redis, and AWS (SNS, SQS, S3), automate data ingestion with n8n, and monitor services with Grafana.',
+    'Over the years, I moved from delivering airport and enterprise platforms to building Go (Golang) backend services at Evermos, covering product discovery, payments, and settlement reconciliation. I work with PostgreSQL, MySQL, Redis, and AWS (SNS, SQS, S3), automate data ingestion with n8n, and monitor services with Grafana. Backed by full-stack experience in Laravel, ReactJS, and Next.js, I also build frontends with AI-assisted development (Claude Code, Antigravity), and I am open to full-stack roles.',
   ],
   stats: [
     { value: '11+', description: 'Years total experience' },
@@ -51,6 +51,7 @@ export const skillsData = [
       { name: 'PHP / Laravel' },
       { name: 'CodeIgniter' },
       { name: 'ReactJS' },
+      { name: 'Next.js' },
       { name: 'TailwindCSS' },
       { name: 'GraphQL' },
     ],
@@ -88,7 +89,7 @@ export const skillsData = [
     category: 'AI & Automation',
     data: [
       { name: 'n8n' },
-      { name: 'AI-Assisted Workflow' },
+      { name: 'AI-Assisted Development (Claude Code, Antigravity)' },
     ],
   },
 ];
@@ -101,7 +102,7 @@ export const experiencesData = [
         year: '2022 - Present',
         position: 'Backend Engineer',
         description:
-          'Build Go backend services across product discovery, payments, and settlement reconciliation. Monitor services with Grafana, investigating error logs and alerting to Google Chat.',
+          'Build Go backend services across product discovery, payments, and settlement reconciliation. Monitor services with Grafana, investigating error logs and alerting to Google Chat. Also deliver frontend work (Next.js) using AI-assisted development when needed.',
       },
     ],
   },
@@ -204,9 +205,9 @@ export const portfolioHighlightsData = [
       'Automatic matching: settlement records are linked to orders by order code (internal) and reference number (external). Statuses: Open, Settled, Orphan (settlement arrived late), and Need Review (amounts differ).',
       'Finance review: finance reviews the list, decides the reconciled amount for Need Review items, and marks records as Reconciled.',
       'Settlement validation: a worker sums reconciled amounts per settlement ID and compares the total with the gateway transfer in the bank mutation (from the shared bank crawler or email via n8n). A match marks the settlement Completed and ready for accounting sync.',
-      'Dashboard: reconciliation grouped by settlement ID.',
+      'Dashboard: reconciliation grouped by settlement ID. When the frontend engineer was busy, I built frontend parts of the dashboard myself in Next.js using AI-assisted development (Claude Code, Antigravity).',
     ],
-    technologies: ['Golang', 'n8n', 'AWS S3', 'REST API', 'Web Scraping'],
+    technologies: ['Golang', 'Next.js', 'n8n', 'AWS S3', 'REST API', 'Web Scraping'],
   },
 ];
 
