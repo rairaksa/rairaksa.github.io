@@ -12,7 +12,7 @@ describe('App', () => {
     expect(screen.getByText(/Databases & Messaging/i)).toBeInTheDocument();
     expect(screen.getByText(/Cloud & Observability/i)).toBeInTheDocument();
     expect(screen.getByText(/AI & Automation/i)).toBeInTheDocument();
-    expect(screen.getByText(/Evermos Backend & Event-Driven Services/i)).toBeInTheDocument();
+    expect(screen.getByText(/Product Discovery Service/i)).toBeInTheDocument();
   });
 
   it('filters portfolio between Company / Enterprise and Freelance & Independent tabs', () => {
@@ -23,11 +23,11 @@ describe('App', () => {
     expect(screen.getByText(/PT Peroksida Indonesia Pratama/i)).toBeInTheDocument();
     expect(screen.getByText(/Joinan Securities Crowdfunding/i)).toBeInTheDocument();
     expect(screen.getByText(/Snapinn Property Agent/i)).toBeInTheDocument();
-    expect(screen.queryByText(/Evermos Backend & Event-Driven Services/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/Product Discovery Service/i)).not.toBeInTheDocument();
 
     const companyTab = screen.getByRole('tab', { name: /Company \/ Enterprise/i });
     fireEvent.click(companyTab);
-    expect(screen.getByText(/Evermos Backend & Event-Driven Services/i)).toBeInTheDocument();
+    expect(screen.getByText(/Product Discovery Service/i)).toBeInTheDocument();
     expect(screen.queryByText(/Maintenance Management System \(MMS\)/i)).not.toBeInTheDocument();
   });
 

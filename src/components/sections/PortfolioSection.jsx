@@ -73,7 +73,7 @@ function PortfolioSection() {
       {filteredHighlights.length > 0 && (
         <div className="flex flex-col gap-3">
           <h3 className="text-xs uppercase tracking-wider text-oceanic text-left font-medium">
-            Featured Backend Architecture (2022 - Present)
+            Featured Backend Projects at Evermos (2022 - Present)
           </h3>
           {filteredHighlights.map((item) => (
             <article
@@ -83,7 +83,9 @@ function PortfolioSection() {
               <div className="flex flex-col gap-1">
                 <div className="flex justify-between items-baseline gap-2">
                   <h4 className="text-base lg:text-lg font-medium text-silk">{item.name}</h4>
-                  <span className="text-xs lg:text-sm text-oceanic shrink-0">{item.year}</span>
+                  {item.year && (
+                    <span className="text-xs lg:text-sm text-oceanic shrink-0">{item.year}</span>
+                  )}
                 </div>
                 {item.context && (
                   <div className="flex items-center">
@@ -96,6 +98,13 @@ function PortfolioSection() {
               <p className="font-light text-sm text-silk/85 leading-relaxed text-justify">
                 {item.description}
               </p>
+              {item.points && (
+                <ul className="list-disc pl-4 flex flex-col gap-1.5 font-light text-sm text-silk/85 leading-relaxed">
+                  {item.points.map((point) => (
+                    <li key={point}>{point}</li>
+                  ))}
+                </ul>
+              )}
               <div className="flex flex-wrap gap-1.5 pt-1">
                 {item.technologies.map((tech) => (
                   <Label key={tech} name={tech} isSmall />

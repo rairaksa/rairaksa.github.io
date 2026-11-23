@@ -7,7 +7,7 @@ export const profileData = {
   resumeUrl: './file/cv.pdf',
   bio: [
     "Backend Engineer based in Bandung, Indonesia 🇮🇩, with a Bachelor's degree in Informatics Engineering (S.T.) from Widyatama University and nearly a decade of software engineering experience turning complex business problems into reliable systems.",
-    'Over the years, I evolved from delivering mission-critical aviation and enterprise platforms into architecting high-throughput backend microservices in Go (Golang) with PostgreSQL, MySQL, Redis, and AWS (SNS, SQS, S3). Today, I combine resilient event-driven architecture with Grafana observability, n8n automation, and AI-assisted engineering workflows to ship fast, dependable software.',
+    'Over the years, I moved from delivering airport and enterprise platforms to building Go (Golang) backend services at Evermos, covering product discovery, payments, and settlement reconciliation. I work with PostgreSQL, MySQL, Redis, and AWS (SNS, SQS, S3), automate data ingestion with n8n, and monitor services with Grafana.',
   ],
   stats: [
     { value: '11+', description: 'Years total experience' },
@@ -52,6 +52,7 @@ export const skillsData = [
       { name: 'CodeIgniter' },
       { name: 'ReactJS' },
       { name: 'TailwindCSS' },
+      { name: 'GraphQL' },
     ],
   },
   {
@@ -68,16 +69,26 @@ export const skillsData = [
     category: 'Cloud & Observability',
     data: [
       { name: 'AWS S3' },
-      { name: 'Grafana' },
+      { name: 'Grafana (Logging & Alerting)' },
+      { name: 'Google Chat Alerts' },
       { name: 'Git' },
       { name: 'Linux CLI' },
     ],
   },
   {
+    category: 'Payments & Integrations',
+    data: [
+      { name: 'Midtrans' },
+      { name: 'Bank API' },
+      { name: 'Cron Jobs' },
+      { name: 'Web Scraping' },
+    ],
+  },
+  {
     category: 'AI & Automation',
     data: [
-      { name: 'AI-Assisted Workflow' },
       { name: 'n8n' },
+      { name: 'AI-Assisted Workflow' },
     ],
   },
 ];
@@ -90,7 +101,7 @@ export const experiencesData = [
         year: '2022 - Present',
         position: 'Backend Engineer',
         description:
-          'Design and scale high-throughput Go microservices and event-driven architectures using AWS SNS/SQS, PostgreSQL, MySQL, Redis, and S3—backed by Grafana observability, n8n workflow automation, and AI-assisted engineering.',
+          'Build Go backend services across product discovery, payments, and settlement reconciliation. Monitor services with Grafana, investigating error logs and alerting to Google Chat.',
       },
     ],
   },
@@ -162,23 +173,40 @@ export const educationData = [
 
 export const portfolioHighlightsData = [
   {
-    name: 'Evermos Backend & Event-Driven Services',
-    year: '2022 - Present',
+    name: 'Product Discovery Service',
     type: 'company',
     context: 'Evermos',
     description:
-      'High-concurrency Go microservices powering social commerce transactions, asynchronous pub/sub workflows via AWS SNS & SQS, low-latency Redis caching, S3 media pipelines, and real-time Grafana observability.',
-    technologies: [
-      'Golang',
-      'PostgreSQL',
-      'MySQL',
-      'Redis',
-      'AWS SNS',
-      'AWS SQS',
-      'AWS S3',
-      'Grafana',
-      'n8n',
+      'Backend service that receives user product-search requests and forwards them over GraphQL to the Elasticsearch-based Search Service, returning relevant product results to the customer.',
+    technologies: ['Golang', 'GraphQL'],
+  },
+  {
+    name: 'Payment Service',
+    type: 'company',
+    context: 'Evermos',
+    description:
+      'Contributed to the payment backend that serves available payment methods, creates payments for checked-out orders, and marks them paid so the Order Service can update the order.',
+    points: [
+      'Midtrans integration: added a new payment method through the Midtrans payment gateway, reusing the existing callback flow.',
+      'Direct bank transfer: added a payment method that connects to the bank over API with no payment gateway, to reduce payment gateway fees. A configurable cron job fetches bank mutations and matches them to orders by unique order code; a match marks the payment as paid.',
+      'Order-paid event: once a payment is validated as paid, the service publishes a notification over AWS SNS/SQS to the Order Service, for both payment methods.',
     ],
+    technologies: ['Golang', 'Midtrans', 'Bank API', 'Cron Jobs', 'AWS SNS', 'AWS SQS', 'Redis'],
+  },
+  {
+    name: 'Reconciliation Service',
+    type: 'company',
+    context: 'Evermos',
+    description:
+      'Backend service, mostly built from the start in the reconciliation team, that reconciles internal orders with payment gateway settlement data and takes finance from review to accounting-ready records.',
+    points: [
+      'Multi-source ingestion: settlement data is scraped daily from gateway dashboards, pulled over API, or crawled from settlement emails, all collected by n8n workflows. Source files and reports are archived in AWS S3, and ingestion uses upserts so re-ingesting is safe.',
+      'Automatic matching: settlement records are linked to orders by order code (internal) and reference number (external). Statuses: Open, Settled, Orphan (settlement arrived late), and Need Review (amounts differ).',
+      'Finance review: finance reviews the list, decides the reconciled amount for Need Review items, and marks records as Reconciled.',
+      'Settlement validation: a worker sums reconciled amounts per settlement ID and compares the total with the gateway transfer in the bank mutation (from the shared bank crawler or email via n8n). A match marks the settlement Completed and ready for accounting sync.',
+      'Dashboard: reconciliation grouped by settlement ID.',
+    ],
+    technologies: ['Golang', 'n8n', 'AWS S3', 'REST API', 'Web Scraping'],
   },
 ];
 
